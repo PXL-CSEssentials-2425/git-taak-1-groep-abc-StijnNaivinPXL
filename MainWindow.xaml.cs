@@ -18,26 +18,45 @@ namespace KleurAnalyse
     public partial class MainWindow : Window
     {
 
-        private Dictionary<string, string> Colors = new Dictionary<string, string>()
-        {
-            //Is this optimised? Nahh, but it is worth it.
-            { "Green", "#008000" },
-            { "Yellow", "#FFFF00" },
-            { "Blue", "#0000FF" },
-            { "Red", "#FF0000" }
-        };
-
         public MainWindow()
         {
             InitializeComponent();
             Red.MouseEnter += Red_MouseEnter;
+            Red.MouseLeftButtonDown += Red_TextInfo;
             Red.MouseLeave += SetColorToGray;
             Blue.MouseEnter += Blue_MouseEnter;
+            Blue.MouseLeftButtonDown += Blue_TextInfo;
             Blue.MouseLeave += SetColorToGray;
             Yellow.MouseEnter += Yellow_MouseEnter;
+            Yellow.MouseLeftButtonDown += Yellow_TextInfo;
             Yellow.MouseLeave += SetColorToGray;
             Green.MouseEnter += Green_MouseEnter;
+            Green.MouseLeftButtonDown += Green_TextInfo;
             Green.MouseLeave += SetColorToGray;
+        }
+
+        private void Red_TextInfo(object sender, MouseEventArgs e)
+        {
+            KleurenCodeTxt.Text = "#FF0000";
+            InformatieTxt.Text = "Rood is de kleur van warmte.";
+        }
+
+        private void Yellow_TextInfo(object sender, MouseEventArgs e)
+        {
+            KleurenCodeTxt.Text = "#FFFF00";
+            InformatieTxt.Text = "Geel is de kleur van levenslust";
+        }
+
+        private void Blue_TextInfo(object sender, MouseEventArgs e)
+        {
+            KleurenCodeTxt.Text = "#0000FF";
+            InformatieTxt.Text = "Blauw is de kleur van intelligentie";
+        }
+
+        private void Green_TextInfo(object sender, MouseEventArgs e)
+        {
+            KleurenCodeTxt.Text = "#008000";
+            InformatieTxt.Text = "Groen is de kleur van genezing";
         }
 
         private void Red_MouseEnter(object sender, MouseEventArgs e)
