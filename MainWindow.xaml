@@ -1,4 +1,5 @@
 ﻿<Window x:Class="KleurAnalyse.MainWindow"
+        x:Name="TheWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,18 +7,18 @@
         xmlns:local="clr-namespace:KleurAnalyse"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid Background="LightGray">
+    <Grid x:Name="BackgroundGrid" Background="LightGray">
         <Image Height="100" Width="100" Margin="693,8,7,326"/>
         <Image Margin="640,10,10,274" Source="/PXL.png" Stretch="Fill"/>
-        <Image Name="Red" Margin="102,100,528,222" Source="/Rood.png" Stretch="Fill"/>
+        <Image Name="Red" Margin="102,100,528,222" Source="/Rood.png" Stretch="Fill" OpacityMask="#FF585858"/>
         <Image Name="Yellow" Margin="316,100,316,222" Source="/Geel.png" Stretch="Fill"/>
         <Image Name="Green" Margin="102,217,528,105" Source="/Groen.png" Stretch="Fill" OpacityMask="Black"/>
         <Image Name="Blue" Margin="316,217,316,105" Source="/Blauw.png" Stretch="Fill"/>
-        <Label Name="Titel" Content="KleurenPsychologie" HorizontalAlignment="Left" Margin="27,33,0,0" VerticalAlignment="Top"/>
+        <Label Name="Titel" Content="Kleuren psychologie" HorizontalAlignment="Left" Margin="27,33,0,0" VerticalAlignment="Top"/>
         <Label x:Name="KleurenCodeLbl" Content="Kleuren Code" HorizontalAlignment="Left" Margin="27,354,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="KleurenCodeTxt" HorizontalAlignment="Left" Margin="127,358,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="KleurenCodeTxt" HorizontalAlignment="Left" Margin="127,358,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
         <Label x:Name="InformatieLbl" Content="Kleuren Code" HorizontalAlignment="Left" Margin="27,390,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="InformatieTxt" HorizontalAlignment="Left" Margin="127,394,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="InformatieTxt" HorizontalAlignment="Left" Margin="127,394,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
 
     </Grid>
 </Window>
